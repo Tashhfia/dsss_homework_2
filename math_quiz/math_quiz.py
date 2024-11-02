@@ -36,7 +36,6 @@ def function_C(n1, n2, o):
         p (str): The entire operation as a string e.g.,- '1 + 2' 
         a (int): Result of the operation
     """
-    
     p = f"{n1} {o} {n2}"
     # addition
     if o == '+': a = n1 + n2
@@ -67,7 +66,7 @@ def math_quiz():
         PROBLEM, ANSWER = function_C(n1, n2, o)
         print(f"\nQuestion: {PROBLEM}")
         useranswer = input("Your answer: ")
-        
+
         try:
             useranswer = int(useranswer)
         except ValueError:
