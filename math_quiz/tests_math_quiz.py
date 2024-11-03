@@ -22,14 +22,15 @@ class TestMathGame(unittest.TestCase):
 
     def test_function_C(self):
             test_cases = [
-                (5, 2, '+', '5 + 2', 7),  # answer correct
-                (10, 4, '*', '10 * 4', 40), # incorrect
-                (5, 2, '-', '5 - 2', 3),    # correct
+                (5, 2, '+', '5 + 2', 7),  
+                (10, 4, '*', '10 * 4', 40), 
+                (5, 2, '-', '5 - 2', 3),
+                (2, 4, '-', '2 - 4', -2)    
             ]
 
             for num1, num2, operator, expected_problem, expected_answer in test_cases:
                  prob, ans = perform_operation(num1, num2, operator)
-                 self.assertEqual(prob, expected_problem, f"Incorrect problem format.")
+                 self.assertEqual(prob, expected_problem, f"Incorrect problem format!")
                  self.assertEqual(ans, expected_answer, f"Answer is incorrect!")
 
 if __name__ == "__main__":
