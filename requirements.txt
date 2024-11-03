@@ -1,0 +1,6 @@
+# Math-quiz-python
+
+## Installation
+
+```bash
+pip install your-package-name
