@@ -1,2 +1,2 @@
 # dsss_homework_2
-pip install git+<link-to-repository.git
+pip install git+https://github.com/Tashhfia/dsss_homework_2.git
