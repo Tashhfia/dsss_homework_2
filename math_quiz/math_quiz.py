@@ -1,7 +1,7 @@
 import random
 
 
-def function_A(min, max):
+def generate_num(min, max):
     """
     Generates a random integer between a specified minimum and mximum range.
 
@@ -15,7 +15,7 @@ def function_A(min, max):
     return random.randint(min, max)
 
 
-def function_B():
+def generate_operator():
     """    
     Chooses a random arithmetic operator.
 
@@ -25,7 +25,7 @@ def function_B():
     return random.choice(['+', '-', '*'])
 
 
-def function_C(n1, n2, o):
+def perform_operation(n1, n2, o):
     """
     Args:
         n1 (int): number 1 
@@ -60,11 +60,11 @@ def math_quiz():
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
     for _ in range(num_ques):
-        n1 = function_A(1, 10); 
-        n2 = function_A(1, 5); 
-        o = function_B()
+        n1 = generate_num(1, 10); 
+        n2 = generate_num(1, 5); 
+        o = generate_operator()
 
-        PROBLEM, ANSWER = function_C(n1, n2, o)
+        PROBLEM, ANSWER = perform_operation(n1, n2, o)
         print(f"\nQuestion: {PROBLEM}")
         useranswer = input("Your answer: ")
         
