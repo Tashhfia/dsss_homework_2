@@ -25,27 +25,27 @@ def generate_operator():
     return random.choice(['+', '-', '*'])
 
 
-def perform_operation(n1, n2, o):
+def perform_operation(n1, n2, operator):
     """
     Args:
         n1 (int): number 1 
         n2 (int): number 2
-        o (str): operator
+        operator (str): operator
 
     Returns:
-        p (str): The entire operation as a string e.g.,- '1 + 2' 
-        a (int): Result of the operation
+        problem (str): The entire operation as a string e.g.,- '1 + 2' 
+        answer (int): Result of the operation
     """
     
-    p = f"{n1} {o} {n2}"
+    problem = f"{n1} {operator} {n2}"
     # addition
-    if o == '+': a = n1 + n2
+    if operator == '+': answer = n1 + n2
     # subtraction
-    elif o == '-': a = n1 - n2
+    elif operator == '-': answer = n1 - n2
     # multiplication
-    else: a = n1 * n2
+    else: answer = n1 * n2
     
-    return p, a
+    return problem, answer
 
 def math_quiz():
     """
@@ -62,9 +62,9 @@ def math_quiz():
     for _ in range(num_ques):
         n1 = generate_num(1, 10); 
         n2 = generate_num(1, 5); 
-        o = generate_operator()
+        operator = generate_operator()
 
-        PROBLEM, ANSWER = perform_operation(n1, n2, o)
+        PROBLEM, ANSWER = perform_operation(n1, n2, operator)
         print(f"\nQuestion: {PROBLEM}")
         useranswer = input("Your answer: ")
         

@@ -1,5 +1,5 @@
 import unittest
-from math_quiz import function_A, function_B, function_C
+from math_quiz import generate_num, generate_operator, perform_operation
 
 
 class TestMathGame(unittest.TestCase):
@@ -9,22 +9,28 @@ class TestMathGame(unittest.TestCase):
         min_val = 1
         max_val = 10
         for _ in range(1000):  # Test a large number of random values
-            rand_num = function_A(min_val, max_val)
-            self.assertTrue(min_val <= rand_num <= max_val)
+            rand_num = generate_num(min_val, max_val)
+            self.assertTrue(min_val <= rand_num <= max_val,
+                            f"{rand_num} is not within the range {min_val} to {max_val}")
 
     def test_function_B(self):
-        # TODO
-        pass
+         """ Checks if the operators are being generated properly"""
+         operator_list = ["*", "+", "-"]
+         for _ in range(1000):
+              operator = generate_operator()
+              self.assertIn(operator, operator_list, f"{operator} not valid!")
 
     def test_function_C(self):
             test_cases = [
-                (5, 2, '+', '5 + 2', 7),
-                ''' TODO add more test cases here '''
+                (5, 2, '+', '5 + 2', 7),  # answer correct
+                (10, 4, '*', '10 * 4', 40), # incorrect
+                (5, 2, '-', '5 - 2', 3),    # correct
             ]
 
             for num1, num2, operator, expected_problem, expected_answer in test_cases:
-                # TODO
-                pass
+                 prob, ans = perform_operation(num1, num2, operator)
+                 self.assertEqual(prob, expected_problem, f"Incorrect problem format.")
+                 self.assertEqual(ans, expected_answer, f"Answer is incorrect!")
 
 if __name__ == "__main__":
     unittest.main()
