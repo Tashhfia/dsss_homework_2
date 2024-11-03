@@ -1,4 +1,4 @@
-# Math Quiz Python
+# Math Quiz
 
 ## Installation
 
