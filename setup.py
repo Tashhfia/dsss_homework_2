@@ -1,12 +1,12 @@
-from setuptools import setup
+from distutils.core import setup
+from setuptools import find_packages
+
 
 setup(
     name="math_quiz",
-    version="0.1.0",
+    version="1.1.0",
+    author="Tashfia",
     description="A Python package for generating random math problems and quizzes.",
+    packages=find_packages(),
     python_requires=">=3.6",
-        entry_points={
-        'console_scripts': [
-            'math_quiz=math_quiz.math_quiz:math_quiz'
-        ],}
 )
